@@ -1,63 +1,71 @@
 package buteelt;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Circle {
-    private static final double PI = 3.14;
-    private final double radius;
+public class CustomList<T> {
+    private List<T> elements;
 
-    public Circle(double radius) {
-        this.radius = radius;
+    public CustomList() {
+        this.elements = new ArrayList<>();
     }
 
-    public double getRadius() {
-        return radius;
+    // Function 1: Add an element to the list
+    public void addElement(T element) {
+        elements.add(element);
     }
 
-    public double calculateArea() {
-        return PI * radius * radius;
+    // Function 2: Remove an element from the list
+    public void removeElement(T element) {
+        elements.remove(element);
     }
 
-    public double calculateCircumference() {
-        return 2 * PI * radius;
+    // Function 3: Get the size of the list
+    public int getSize() {
+        return elements.size();
+    }
+
+    // Function 4: Check if the list contains a specific element
+    public boolean containsElement(T element) {
+        return elements.contains(element);
+    }
+
+    // Function 5: Get an element at a specific index
+    public T getElementAt(int index) {
+        if (index >= 0 && index < elements.size()) {
+            return elements.get(index);
+        }
+        return null; // Return null if index is out of bounds
+    }
+
+    // Function 6: Clear all elements from the list
+    public void clearList() {
+        elements.clear();
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        List<Circle> circles = new ArrayList<>();
+        CustomList<String> stringList = new CustomList<>();
 
-        System.out.println("------------------------------------------------------------");
-        System.out.println("CircleCalc v1.0");
-        System.out.println();
-        System.out.println("Calculates and prints information for a user-supplied radius");
-        System.out.println("------------------------------------------------------------");
+        // Add elements to the list
+        stringList.addElement("Element 1");
+        stringList.addElement("Element 2");
+        stringList.addElement("Element 3");
 
-      
-        System.out.print("Enter the number of circles: ");
-        int numCircles = in.nextInt();
+        // Print the size of the list
+        System.out.println("Size of the list: " + stringList.getSize());
 
-     
-        for (int i = 0; i < numCircles; i++) {
-            System.out.print("Enter the radius for circle " + (i + 1) + ": ");
-            double radius = in.nextDouble();
-            Circle c = new Circle(radius);
-            circles.add(c);
-        }
+        // Check if the list contains a specific element
+        System.out.println("Contains Element 2: " + stringList.containsElement("Element 2"));
 
-        
-        System.out.println("------------------------------------------------------------");
-        System.out.println("Results:");
-        for (int i = 0; i < numCircles; i++) {
-            Circle c = circles.get(i);
-            System.out.println("Circle " + (i + 1) + ":");
-            System.out.println("Radius: " + c.getRadius());
-            System.out.println("Area: " + c.calculateArea());
-            System.out.println("Circumference: " + c.calculateCircumference());
-            System.out.println("------------------------------------------------------");
-                        System.out.println("------------------------------------------------------");
+        // Get an element at a specific index
+        System.out.println("Element at index 1: " + stringList.getElementAt(1));
 
-        }
+        // Remove an element from the list
+        stringList.removeElement("Element 1");
+
+        // Clear all elements from the list
+        stringList.clearList();
+
+        // Print the size of the list after clearing
+        System.out.println("Size of the list after clearing: " + stringList.getSize());
     }
 }
