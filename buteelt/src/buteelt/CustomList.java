@@ -48,7 +48,7 @@ public class CustomList<T> {
        
         stringList.addElement("Element 1");
         stringList.addElement("Element 2");
-        stringList.addElement("Element 3");
+        stringList.addElement("Element 33");
 
        
         System.out.println("Size of the list: " + stringList.getSize());
