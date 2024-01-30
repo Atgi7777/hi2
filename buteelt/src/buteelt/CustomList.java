@@ -16,8 +16,14 @@ public class CustomList<T> {
 
     // 2
     public void removeElement(T element) {
-        elements.remove(element);
+        if (elements.contains(element)) {
+            elements.remove(element);
+            System.out.println("Element removed: " + element);
+        } else {
+            System.out.println("Element not found: " + element);
+        }
     }
+
 
     // 3
     public int getSize() {
@@ -26,7 +32,11 @@ public class CustomList<T> {
 
     // 4
     public boolean containsElement(T element) {
-        return elements.contains(element);
+    	if (elements.contains(element)) {
+    		  return elements.contains(element);
+    	}
+    	
+    	  return elements.contains(element);
     }
 
     // 5
@@ -46,26 +56,27 @@ public class CustomList<T> {
         CustomList<String> stringList = new CustomList<>();
 
        
-        stringList.addElement("Element 1");
-        stringList.addElement("Element 2");
-        stringList.addElement("Element 33");
+        stringList.addElement("Элемент 1");
+        stringList.addElement("Элемент 2");
+        stringList.addElement("Элемент 33");
 
        
-        System.out.println("Size of the list: " + stringList.getSize());
+        System.out.println("Жагсаалтын хэмжээ: " + stringList.getSize());
 
         
-        System.out.println("Contains Element 2: " + stringList.containsElement("Element 2"));
-
+        System.out.println("Элемент 2 шалгах: " + stringList.containsElement("Element 2"));
+        System.out.println("Элемент 2 шалгах: " + stringList.containsElement("Element 5"));
         
-        System.out.println("Element at index 1: " + stringList.getElementAt(1));
+        System.out.println("индекс 1 ийн элемент: " + stringList.getElementAt(1));
 
        
-        stringList.removeElement("Element 1");
+        stringList.removeElement("Элемент 1");
 
-    
+        System.out.println(stringList.getSize());
+        
         stringList.clearList();
 
-       
-        System.out.println("Size of the list after clearing: " + stringList.getSize());
+   
+        System.out.println("Цэвэрлэсний дараахь жагсаалтын хэмжээ: " + stringList.getSize());
     }
 }
