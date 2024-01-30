@@ -37,7 +37,7 @@ public class CustomList<T> {
         return null; 
     }
 
-    // 6
+    // 6   3;47
     public void clearList() {
         elements.clear();
     }
