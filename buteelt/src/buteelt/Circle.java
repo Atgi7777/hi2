@@ -56,6 +56,8 @@ public class Circle {
             System.out.println("Area: " + c.calculateArea());
             System.out.println("Circumference: " + c.calculateCircumference());
             System.out.println("------------------------------------------------------");
+                        System.out.println("------------------------------------------------------");
+
         }
     }
 }
