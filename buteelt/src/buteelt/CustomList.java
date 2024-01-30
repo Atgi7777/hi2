@@ -9,7 +9,7 @@ public class CustomList<T> {
         this.elements = new ArrayList<>();
     }
 
-    // 1
+    // 1 3:49
     public void addElement(T element) {
         elements.add(element);
     }
