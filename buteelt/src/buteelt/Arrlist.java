@@ -1,5 +1,5 @@
 package buteelt;
-
+//3.53
 import java.util.Scanner;
 
 public class Arrlist<T> {    
@@ -55,13 +55,19 @@ public class Arrlist<T> {
     public static void main(String[] args){
         Arrlist<BookStore> bookList = new Arrlist<>();
         Scanner scan = new Scanner(System.in);
-        System.out.print("Номын нэр оруулна уу?");
-        String name = scan.nextLine();
-        System.out.print("Номын үнэ оруулна уу? ");
-        double cost = scan.nextDouble();
-        BookStore newBook = new BookStore(name, cost);
-        bookList.add(newBook);
-        System.out.println("Амжилттай нэмэгдлээ");
+        System.out.print("Хэдэн ном оруулах вэ?");
+        int a = scan.nextInt();
+        scan.nextLine();
+        for(int j = 0 ; j < a ; j++ ) {
+        	System.out.print("Номын нэр оруулна уу?");
+            String name = scan.nextLine();
+            System.out.print("Номын үнэ оруулна уу? ");
+            double cost = scan.nextDouble();
+            scan.nextLine();
+            BookStore newBook = new BookStore(name, cost);
+            bookList.add(newBook);
+            System.out.println("Амжилттай нэмэгдлээ");
+        }
         System.out.println("Номын жагсаалт");
         for (int i = 0; i < bookList.size(); i++) {
             System.out.println(bookList.get(i).getName() + " - $" + bookList.get(i).getCost());
