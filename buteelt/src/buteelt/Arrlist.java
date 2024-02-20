@@ -13,7 +13,7 @@ public class Arrlist<T> {
     }
 //jyfuyfu
     public void add(T element) {
-        if (size == elements.length) 
+        if (size == elements.length) //hgy
             ensureCapacity();
         elements[size++] = element;
     }
