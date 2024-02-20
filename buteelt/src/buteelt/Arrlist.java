@@ -1,7 +1,7 @@
 package buteelt;
-//3.53
-import java.util.Scanner;
 
+import java.util.Scanner;
+//3:55
 public class Arrlist<T> {    
     private Object[] elements;
     private int size;
